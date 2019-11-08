@@ -12,7 +12,7 @@ Thanks to [this page](https://dassur.ma/things/c-to-webassembly/) for help with 
 1. Make some changes to the LLVM FFI for Factor. The first is sort of a hack, the second can be rolled 
 into a PR to improve the FFI (so you may not need to do it).
 
-If on MacOS, change the prelude to accommodate your location of the LLVM dynamic library
+If on MacOS, change the prelude to accommodate your location of the LLVM dynamic library. You will need to install LLVM if you don't have it already (https://llvm.org/docs/GettingStarted.html), as well as find where the dynamic library is located.
 
 ```forth
 << "llvm" {
