@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<script type="module">
+  async function init() {
+    // seems to be problematic, use the below instead
+    // const { instance } = await WebAssembly.instantiateStreaming(
+    //   fetch("./square.wasm")
+    // );
+    // https://stackoverflow.com/a/52732080/5309823
+    const response = await fetch("square.wasm");
+    const buffer = await response.arrayBuffer();
+    const obj = await WebAssembly.instantiate(buffer);
+    console.log(obj.instance.exports.square(5));
+    console.log(obj.instance.exports.square(12));
+  }
+  init();
+</script>
